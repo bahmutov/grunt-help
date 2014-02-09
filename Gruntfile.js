@@ -41,5 +41,6 @@ module.exports = function(grunt) {
   grunt.loadTasks('tasks');
   // load other grunt plugins
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.registerTask('default', ['jshint']);
+  grunt.loadNpmTasks('grunt-jshint-solid');
+  grunt.registerTask('default', ['jshint', 'jshint-solid']);
 };
