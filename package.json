@@ -1,7 +1,7 @@
 {
   "name": "grunt-help",
   "description": "Runs the program with --help option, captures output for documentation",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": {
     "name": "Gleb Bahmutov",
     "email": "gleb.bahmutov@gmail.com",
@@ -16,10 +16,11 @@
   "devDependencies": {
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-jshint": "~0.8.0",
-    "jshint-stylish": "~0.1.5",
-    "pre-git": "0.0.14",
     "grunt-jshint-solid": "0.0.1",
-    "grunt-readme": "~0.4.5"
+    "grunt-nice-package": "~0.2.1",
+    "grunt-readme": "~0.4.5",
+    "jshint-stylish": "~0.1.5",
+    "pre-git": "0.0.14"
   },
   "engines": {
     "node": ">= 0.8.0"

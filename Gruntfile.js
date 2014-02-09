@@ -52,6 +52,10 @@ module.exports = function(grunt) {
         docs: '.',
         templates: './docs'
       }
+    },
+
+    'nice-package': {
+      all: {}
     }
   });
 
@@ -61,6 +65,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-jshint-solid');
   grunt.loadNpmTasks('grunt-readme');
+  grunt.loadNpmTasks('grunt-nice-package');
 
-  grunt.registerTask('default', ['jshint', 'jshint-solid', 'help', 'readme']);
+  grunt.registerTask('default', ['jshint', 'jshint-solid', 'nice-package', 'help', 'readme']);
 };
