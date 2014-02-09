@@ -8,6 +8,12 @@
 
 'use strict';
 
+if (process.argv[2] === '--help' || process.argv[2] === '-h') {
+  console.log('grunt-help');
+  console.log('  runs your program with --help (or given parameters) to generate help doc');
+  process.exit(0);
+}
+
 module.exports = function(grunt) {
 
   // Project configuration.
@@ -20,12 +26,20 @@ module.exports = function(grunt) {
       options: {
         jshintrc: '.jshintrc',
         reporter: require('jshint-stylish')
-      },
+      }
+    },
+
+    help: {
+      all: {
+        options: {
+        }
+      }
     }
   });
 
   // Actually load this plugin's task(s).
   grunt.loadTasks('tasks');
+  // load other grunt plugins
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.registerTask('default', ['jshint']);
 };
