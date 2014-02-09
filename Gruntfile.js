@@ -34,6 +34,13 @@ module.exports = function(grunt) {
         options: {
         }
       }
+    },
+    readme: {
+      options: {
+        readme: './docs/README.tmpl.md',
+        docs: '.',
+        templates: './docs'
+      }
     }
   });
 
@@ -42,5 +49,7 @@ module.exports = function(grunt) {
   // load other grunt plugins
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-jshint-solid');
-  grunt.registerTask('default', ['jshint', 'jshint-solid']);
+  grunt.loadNpmTasks('grunt-readme');
+
+  grunt.registerTask('default', ['jshint', 'jshint-solid', 'help', 'readme']);
 };
