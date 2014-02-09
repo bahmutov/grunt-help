@@ -1,0 +1,45 @@
+{
+  "name": "grunt-help",
+  "description": "Runs the program with --help option, captures output for documentation",
+  "version": "0.1.0",
+  "author": {
+    "name": "Gleb Bahmutov",
+    "email": "gleb.bahmutov@gmail.com",
+    "url": "http://glebbahmutov.com"
+  },
+  "bugs": {
+    "url": "https://github.com/bahmutov/grunt-help/issues"
+  },
+  "dependencies": {
+    "check-types": "~1.1.1"
+  },
+  "devDependencies": {
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "jshint-stylish": "~0.1.5",
+    "pre-git": "0.0.14"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "homepage": "https://github.com/bahmutov/grunt-help",
+  "keywords": [
+    "gruntplugin",
+    "package",
+    "validator",
+    "npm"
+  ],
+  "license": "MIT",
+  "main": "Gruntfile.js",
+  "peerDependencies": {
+    "grunt": "~0.4.1"
+  },
+  "pre-commit": "grunt",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:bahmutov/grunt-help.git"
+  },
+  "scripts": {
+    "test": "grunt"
+  }
+}
