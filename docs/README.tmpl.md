@@ -4,9 +4,10 @@
 
 {%= _.doc("./docs/badges.md") %}
 
-{%= _.doc("./docs/options.md") %}
+{%= _.doc("./docs/help.md") %}
 
-{%= _.doc("./docs/use.md") %}
+See the [Gruntfile.js](Gruntfile.js) for example how to
+generate README.md including program options via grunt tasks.
 
 {%= _.doc("./docs/footer.md") %}
 

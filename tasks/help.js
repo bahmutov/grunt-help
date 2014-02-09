@@ -10,21 +10,26 @@
 
 var verify = require('check-types').verify;
 var exists = require('fs').existsSync;
+var write = require('fs').writeFileSync;
 var exec = require('child_process').exec;
 
 module.exports = function(grunt) {
   var pkg = grunt.file.readJSON('package.json');
   verify.unemptyString(pkg.description, 'package is missing description');
-  var main = pkg.main || 'index.js';
 
   grunt.registerMultiTask('help', pkg.description, function() {
-    if (!exists(main)) {
-      throw new Error('Cannot find script to run ' + main);
+    var options = this.options({
+      main: pkg.main || 'index.js',
+      destination: null
+    });
+    if (!exists(options.main)) {
+      throw new Error('Cannot find script to run ' + options.main);
     }
-    var cmd = 'node ' + main + ' --help';
-    grunt.verbose.writeln('generating help via', cmd);
-    var done = this.async();
 
+    var cmd = 'node ' + options.main + ' --help';
+    grunt.verbose.writeln('generating help via', cmd);
+
+    var done = this.async();
     exec(cmd, function (error, stdout, stderr) {
       if (error) {
         grunt.log.error(error);
@@ -37,6 +42,11 @@ module.exports = function(grunt) {
         return;
       }
 
+      if (options.destination) {
+        verify.unemptyString(options.destination, 'expected destination string');
+        write(options.destination, stdout, 'utf8');
+        grunt.verbose.writeln('saved options to', options.destination);
+      }
       grunt.log.writeln(stdout);
       done(true);
     });
