@@ -61,11 +61,8 @@ module.exports = function(grunt) {
 
   // Actually load this plugin's task(s).
   grunt.loadTasks('tasks');
-  // load other grunt plugins
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-jshint-solid');
-  grunt.loadNpmTasks('grunt-readme');
-  grunt.loadNpmTasks('grunt-nice-package');
+  var plugins = require('matchdep').filterDev('grunt-*');
+  plugins.forEach(grunt.loadNpmTasks);
 
   grunt.registerTask('default', ['jshint', 'jshint-solid', 'nice-package', 'help', 'readme']);
 };
