@@ -1,4 +1,4 @@
-# grunt-help v0.4.0
+# grunt-help v0.4.1
 
 > Runs the program with --help option, captures output for documentation
 
@@ -31,7 +31,6 @@ grunt-help
 		all: {}
 	}
 	grunt help // saved output of `node index.js --help into docs/help.md
-
 
 
 See the [Gruntfile.js](Gruntfile.js) for example how to

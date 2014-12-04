@@ -46,6 +46,7 @@ module.exports = function(grunt) {
       if (!text && !error && stderr) {
         text = stderr;
       }
+      text = text.trim();
 
       if (options.destination) {
         verify.unemptyString(options.destination, 'expected destination string');
