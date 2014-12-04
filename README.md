@@ -1,4 +1,4 @@
-# grunt-help v0.3.0
+# grunt-help v0.4.0
 
 > Runs the program with --help option, captures output for documentation
 

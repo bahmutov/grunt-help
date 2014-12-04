@@ -42,12 +42,17 @@ module.exports = function(grunt) {
         return;
       }
 
+      var text = stdout;
+      if (!text && !error && stderr) {
+        text = stderr;
+      }
+
       if (options.destination) {
         verify.unemptyString(options.destination, 'expected destination string');
-        write(options.destination, stdout, 'utf8');
+        write(options.destination, text, 'utf8');
         grunt.verbose.writeln('saved options to', options.destination);
       }
-      grunt.log.writeln(stdout);
+      grunt.verbose.writeln(text);
       done(true);
     });
   });
