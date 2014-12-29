@@ -1,3 +1,4 @@
+```
 grunt-help
     runs your program with --help (or given parameters) to generate help doc
 
@@ -10,3 +11,4 @@ grunt-help
 		all: {}
 	}
 	grunt help // saved output of `node index.js --help into docs/help.md
+```

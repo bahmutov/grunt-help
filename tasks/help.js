@@ -8,7 +8,8 @@
 
 'use strict';
 
-var verify = require('check-types').verify;
+var check = require('check-types');
+var verify = check.verify;
 var exists = require('fs').existsSync;
 var write = require('fs').writeFileSync;
 var exec = require('child_process').exec;
@@ -50,6 +51,9 @@ module.exports = function(grunt) {
 
       if (options.destination) {
         verify.unemptyString(options.destination, 'expected destination string');
+        if (check.unemptyString(options.characters)) {
+          text = options.characters + '\n' + text + '\n' + options.characters + '\n';
+        }
         write(options.destination, text, 'utf8');
         grunt.verbose.writeln('saved options to', options.destination);
       }

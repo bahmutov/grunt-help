@@ -41,7 +41,8 @@ module.exports = function(grunt) {
 
     help: {
       options: {
-        destination: 'docs/help.md'
+        destination: 'docs/help.md',
+        characters: '```'
       },
       all: {}
     },
